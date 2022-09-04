@@ -2,6 +2,8 @@ Page({
     data: {
         search: "",
 
+        user:"",
+        
         allItems: [],
         unusedItems: [],
         usedItems: [],
@@ -18,6 +20,7 @@ Page({
     
     //页面加载时运行
     async onShow(){
+        this.getUser();
         await wx.cloud.callFunction({name: 'getOpenId'}).then(async res => {
             await wx.cloud.callFunction({name: 'getElementByOpenId', data: {
                 list: getApp().globalData.collectionStorageList,
@@ -28,7 +31,22 @@ Page({
             })
         })
     },
-  
+
+  //获取user
+    async getUser(){
+        await wx.cloud.callFunction({name: 'getOpenId'}).then(res => {
+            if(res.result === getApp().globalData._openidA){
+                this.setData({
+                    user: getApp().globalData.userA,
+                })
+            }else if(res.result === getApp().globalData._openidB){
+                this.setData({
+                    user: getApp().globalData.userB,
+                })
+            }
+        })
+      },
+
     //转到物品详情
     async toDetailPage(element, isUpper) {
       const itemIndex = element.currentTarget.dataset.index
