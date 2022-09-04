@@ -1,6 +1,6 @@
 <wxs module="util" src="../util.wxs" />
-<view >
-  <view class="title">账号：{{user}}</view>
+<view style = "background-color: pink; padding-bottom: 1rem;">
+  <view class="title" style="padding-left: 1rem;">账号：{{user}}</view>
 </view>
 <view class="container white" wx:if="{{allItems.length === 0}}">
   <image class="background" src="Images/None.png" mode="aspectFit" />
