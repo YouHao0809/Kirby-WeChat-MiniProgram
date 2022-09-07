@@ -38,6 +38,11 @@
         <view class="title">今天想做什么呢？</view>
       </view>
     </view>
+    <view class="form-cell">
+      <view class="slide">
+        <view class="title">其他功能仍在陆续开发ing...</view>
+      </view>
+    </view>
   </view>
 
 </view>
