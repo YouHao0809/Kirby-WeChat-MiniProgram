@@ -17,6 +17,7 @@
     <view class="form-cell">
       <view class="form-cell_title">💰积分奖励</view>
       <slider min="0" max="{{maxCredit}}" block-size="15" block-color="#353535" activeColor="#ff5794" bindchange="onCreditInput" value="{{credit}}" show-value/>
+      <input class="form-cell_credit_input" placeholder="手动输入积分：" placeholder-class="form-cell_placeholder" bindinput="onCreditInput" value="{{credit}}" />
     </view>
   </view>
 
